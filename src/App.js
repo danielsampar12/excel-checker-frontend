@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from './services/api';
-import './App.css'
+import GlobalStyle from './global';
 
 import { Link } from 'react-router-dom';
 
@@ -17,6 +17,7 @@ function App() {
 
   return (
     <>
+    <GlobalStyle />
       <div className="link">
         <Link to={'/upload'}>Upload</Link>
       </div>
