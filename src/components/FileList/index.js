@@ -8,8 +8,8 @@ import { Container, FileInfo, Preview } from './styles';
 
 const FileList = ({ files, onDelete }) => (
     <Container>
-        {files.map(uploadFile => (
-            <li key={uploadFile.id}>
+        {files.map((uploadFile, index) => (
+            <li key={index}>
                 <FileInfo>
                     <FaFileExcel size={24} style={{marginRight: 8}} color="#222" />
                     <div>

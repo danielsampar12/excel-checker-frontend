@@ -4,6 +4,7 @@ import Dropzone from 'react-dropzone';
 
 import { DropContainer, UploadMessage } from './styles';
 
+//unf
 export default class Upload extends Component{
     renderDragMessage = (isDragActive, isDragReject) => {
         if(!isDragActive){
