@@ -7,6 +7,7 @@ import { Container , Content } from './styles';
 
 import Upload from '../Upload';
 import FileList from '../FileList';
+import Archives from '../Archives';
 
 import api from '../../services/api';
 
@@ -98,6 +99,9 @@ class UploadPage extends Component {
                 <Content>
                     <Upload onUpload={this.handleUpload} />
                     { !!uploadFiles.length && <FileList files={uploadFiles} onDelete={this.handleDelete}/>}
+                </Content>
+                <Content>
+                    <Archives />
                 </Content>
             </Container>
         );
