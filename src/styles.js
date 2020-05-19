@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 export const Container = styled.div`
   height: 100%;
@@ -14,6 +14,7 @@ export const Content = styled.div`
     background: #FFFF;
     border-radius: 4px;
     padding: 20px;
+    
 `;
 
 export const TextContainer = styled.div`
@@ -22,18 +23,18 @@ export const TextContainer = styled.div`
     
 `;
 
-export const Table = styled.table.attrs({
-    id: 'incidentsTable'
-})`
+const checkedColor = css`
+    background-color: #e57878;
+`;
+
+export const Table = styled.table`
     text-align: center;
-    width: 100%;
-    max-width: 400px;
     margin: 30px;
     background: #FFFF;
     border-radius: 4px;
     padding: 20px;
     th, td{
-        padding: 0 30px;
+        padding: 0 10px;
         button{
                 border: 0;
                 background: transparent;
@@ -45,3 +46,4 @@ export const Table = styled.table.attrs({
     tr:nth-child(even){background-color: #f2f2f2;}
     tr:hover {background-color: #ddd;}
 `;
+

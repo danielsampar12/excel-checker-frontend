@@ -36,7 +36,7 @@ function Archives(){
                         <strong>{uploadFile.name}</strong>
                         <span>
                             {filesize(uploadFile.size)}{" "}
-                            <button onClick={() => {}}>Excluir</button>
+                            <button onClick={() => handleDelete(uploadFile._id)}>Excluir</button>
                         </span>
                     </div>
                 </FileInfo>

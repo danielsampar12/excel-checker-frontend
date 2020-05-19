@@ -16,20 +16,6 @@ class UploadPage extends Component {
         uploadFiles: [],
     };
 
-    async componentDidMount() {
-        const response = await api.get('posts');
-        console.log(response.data)
-        this.setState({
-            uploadedFiles: response.data.map(file => ({
-                id: file._id,
-                name: file.name,
-                readableSize: filesize(file.size),
-                uploaded: true,
-                url: file.url,
-            }))
-        }, () => {console.log(response.data, this.state.uploadFiles)});
-    }
-
     handleUpload = files => {
         const uploadFiles = files.map(file => ({
             file,
