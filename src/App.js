@@ -15,6 +15,8 @@ function App() {
 
   async function loadEmps(){
     const response =  await api.get('/incidents');
+    response.data.sort((a,b) => a.row - b.row);
+    response.data.sort((a,b) => a.flag_checked - b.flag_checked);
     setIncidents(response.data);
   }
 

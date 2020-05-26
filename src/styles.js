@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100%;
@@ -21,10 +21,6 @@ export const TextContainer = styled.div`
     display: flex;
     justify-content: center;
     
-`;
-
-const checkedColor = css`
-    background-color: #e57878;
 `;
 
 export const Table = styled.table`
