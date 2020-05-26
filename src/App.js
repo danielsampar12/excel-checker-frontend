@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import api from './services/api';
 import GlobalStyle from './global';
-import { Container , Content, TextContainer, Table, Tr} from './styles';
+import { Container , Content, Nav, TextContainer, Table, Tr} from './styles';
 
+import { format } from 'date-fns'
 
 import { Link } from 'react-router-dom';
 
@@ -36,7 +37,7 @@ async function handleChecked(id){
       <GlobalStyle />
         
         <main>
-          <header><Content><TextContainer><Link to={'/upload'}>Upload</Link></TextContainer></Content></header>
+          <Nav><Content><TextContainer><Link to={'/upload'}>Upload</Link></TextContainer></Content></Nav>
           <Table>
             <thead>
               <tr>
@@ -60,12 +61,13 @@ async function handleChecked(id){
                   <td>{incident.dc_chave_contrato}</td>
                   <td>{incident.dc_razao_social}</td>
                   <td>{incident.nr_nota_fiscal}</td>
-                  <td>{incident.dt_inclusao_ctr}</td>
+                  <td>{format(new Date(incident.dt_inclusao_ctr), 'dd/MM/yyyy')}</td>
                   <td>{incident.vl_recorrente}</td>
                   <td>{incident.vl_comissao_calculado}</td>
                   <td>{incident.vl_comissao}</td>
                   <td>{incident.flag_erro_calculo ? <strong>ERRO CALCULO</strong> : <strong>PARCELA NAO FOI PAGA</strong>}</td>
-                  <td><button onClick={() => window.confirm('Deseja deletar o registro da linha de ocorrencia ' + incident.row + '?') ? handleDelete(incident._id) : ''}>Excluir</button></td>
+                  <td><button onClick={() => window.confirm('Deseja deletar o registro da linha de ocorrencia: ' + incident.row + ' e Razão Social: '
+                                      + incident.dc_razao_social + '?') ? handleDelete(incident._id) : ''}>Excluir</button></td>
                   <td><button onClick={() => handleChecked(incident._id)}>Check</button></td>
                 </Tr>
               ))}

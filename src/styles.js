@@ -7,25 +7,31 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const Nav = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+`;
+
 export const Content = styled.div` 
     width: 100%;
     max-width: 400px;
-    margin: 30px;
+    margin: 10px;
     background: #FFFF;
     border-radius: 4px;
     padding: 20px;
-    
 `;
 
 export const TextContainer = styled.div`
     display: flex;
     justify-content: center;
-    
 `;
 
 export const Table = styled.table`
     text-align: center;
-    margin: 30px;
+    margin: 20px;
     background: #FFFF;
     border-radius: 4px;
     padding: 20px;
