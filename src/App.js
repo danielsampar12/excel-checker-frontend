@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from './services/api';
 import GlobalStyle from './global';
-import { Container , Content, TextContainer, Table} from './styles';
+import { Container , Content, TextContainer, Table, Tr} from './styles';
 
 
 import { Link } from 'react-router-dom';
@@ -48,12 +48,11 @@ async function handleChecked(id){
                 <th>VCM A RECEBER </th>
                 <th>VCM RECEBIDO</th>
                 <th>CONTESTAÇÃO</th>
-                <th>Is checked?</th>
               </tr>
             </thead>
             <tbody>
               {incidents.map((incident, index) => (
-                <tr key={index} >
+                <Tr isChecked={incident.flag_checked} key={index} listIndex={index}>
                   <td>{incident.row}</td>
                   <td>{incident.nr_cnpj}</td>
                   <td>{incident.dc_chave_contrato}</td>
@@ -63,12 +62,10 @@ async function handleChecked(id){
                   <td>{incident.vl_recorrente}</td>
                   <td>{incident.vl_comissao_calculado}</td>
                   <td>{incident.vl_comissao}</td>
-                  <td>{incident.flag_erro_calculo && <strong>ERRO CALCULO</strong> || <strong>PARCELA NAO FOI PAGA</strong>}</td>
-                  <td>{incident.flag_checked && 'SIM' || 'NAO'}</td>
+                  <td>{incident.flag_erro_calculo ? <strong>ERRO CALCULO</strong> : <strong>PARCELA NAO FOI PAGA</strong>}</td>
                   <td><button onClick={() => handleDelete(incident._id)}>Excluir</button></td>
                   <td><button onClick={() => handleChecked(incident._id)}>Check</button></td>
-
-                </tr>
+                </Tr>
               ))}
             </tbody>
           </Table>

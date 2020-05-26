@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import { FaFileExcel } from 'react-icons/fa';
-import { MdCheckCircle, MdError, MdLink} from 'react-icons/md';
+import { MdCheckCircle,  MdLink} from 'react-icons/md';
 
 import filesize from 'filesize';
 

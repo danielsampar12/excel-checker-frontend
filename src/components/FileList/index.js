@@ -4,7 +4,7 @@ import {CircularProgressbar} from 'react-circular-progressbar';
 import { FaFileExcel } from 'react-icons/fa'
 import { MdCheckCircle, MdError, MdLink} from 'react-icons/md'
 
-import { Container, FileInfo, Preview } from './styles';
+import { Container, FileInfo} from './styles';
 
 const FileList = ({ files, onDelete }) => (
     <Container>

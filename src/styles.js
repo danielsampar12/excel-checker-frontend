@@ -43,7 +43,20 @@ export const Table = styled.table`
                 cursor: pointer;
             }
     }
-    tr:nth-child(even){background-color: #f2f2f2;}
+    
     tr:hover {background-color: #ddd;}
+    
 `;
 
+export const Tr = styled.tr`
+    background-color: ${props => {
+        if(props.isChecked){
+            return  '#e57878'
+        }else if(props.listIndex % 2 !== 0){
+            return '#f2f2f2'
+        }
+        
+        return '#FFF'
+    }}
+
+`;
