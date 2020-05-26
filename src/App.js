@@ -65,7 +65,7 @@ async function handleChecked(id){
                   <td>{incident.vl_comissao_calculado}</td>
                   <td>{incident.vl_comissao}</td>
                   <td>{incident.flag_erro_calculo ? <strong>ERRO CALCULO</strong> : <strong>PARCELA NAO FOI PAGA</strong>}</td>
-                  <td><button onClick={() => handleDelete(incident._id)}>Excluir</button></td>
+                  <td><button onClick={() => window.confirm('Deseja deletar o registro da linha de ocorrencia ' + incident.row + '?') ? handleDelete(incident._id) : ''}>Excluir</button></td>
                   <td><button onClick={() => handleChecked(incident._id)}>Check</button></td>
                 </Tr>
               ))}
