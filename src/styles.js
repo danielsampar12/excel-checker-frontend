@@ -34,9 +34,9 @@ export const Table = styled.table`
     margin: 20px;
     background: #FFFF;
     border-radius: 4px;
-    padding: 20px;
+    padding: 10px;
     th, td{
-        padding: 0 10px;
+        padding: 0 5px;
         button{
                 border: 0;
                 background: transparent;
